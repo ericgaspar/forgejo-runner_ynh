@@ -15,4 +15,4 @@ test_format = 1.0
     # -------------------------------
 
     args.token = "GR1348941_Rew7obt4p9jZyQUtHLx"
-    args.gitea_url = "https://gitea.com/"
+    args.forgejo_url = "https://forgejo.com/"

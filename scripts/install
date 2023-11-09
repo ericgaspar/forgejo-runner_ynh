@@ -9,7 +9,7 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
-gitea_url=$YNH_APP_ARG_GITEA_URL
+forgejo_url=$YNH_APP_ARG_FORGEJO_URL
 token=$YNH_APP_ARG_TOKEN
 
 #=================================================
@@ -23,7 +23,7 @@ ynh_script_progression --message="Setting up source files..." --weight=1
 ynh_setup_source --dest_dir="$install_dir"
 
 chown -R $app:www-data "$install_dir"
-chmod +x "$install_dir/act_runner"
+chmod +x "$install_dir/forgejo-runner"
 
 #=================================================
 # SYSTEM CONFIGURATION
@@ -36,7 +36,7 @@ ynh_script_progression --message="Adding system configurations related to $app..
 # Create a dedicated systemd config
 ynh_add_systemd_config
 
-yunohost service add $app --description="Runner for Gitea" --log="/var/log/$app/$app.log"
+yunohost service add $app --description="Runner for Forgejo" --log="/var/log/$app/$app.log"
 
 #=================================================
 # APP INITIAL CONFIGURATION
@@ -46,7 +46,7 @@ yunohost service add $app --description="Runner for Gitea" --log="/var/log/$app/
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
 pushd $install_dir
-	./act_runner register --instance $gitea_url --token $token --no-interactive
+	./forgejo-runner register --instance $forgejo_url --token $token --no-interactive
 popd
 
 #=================================================

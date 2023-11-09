@@ -44,7 +44,7 @@ ynh_add_nginx_config
 
 ynh_add_systemd_config
 
-yunohost service add $app --description="Runner for Gitea" --log="/var/log/$app/$app.log"
+yunohost service add $app --description="Runner for Forgejo" --log="/var/log/$app/$app.log"
 
 #=================================================
 # RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS...)

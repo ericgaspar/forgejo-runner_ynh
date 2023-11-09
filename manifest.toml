@@ -2,18 +2,19 @@
 
 packaging_format = 2
 
-id = "gitea-runner"
-name = "Gitea Runner"
-description.en = "Runner for Gitea based on act"
-description.fr = "Runner pour Gitea basé sur act"
+id = "forgejo-runner"
+name = "Forgejo Runner"
+description.en = "Runner for Forgejo based on act"
+description.fr = "Runner pour Forgejo basé sur act"
 
-version = "0.2.6~ynh1"
+version = "3.0.3~ynh1"
 
 maintainers = ["eric_G"]
 
 [upstream]
 license = "MIT"
-code = "https://gitea.com/gitea/act_runner"
+admindoc = "https://forgejo.org/docs/next/admin/actions/#forgejo-runner"
+code = "https://code.forgejo.org/forgejo/runner"
 
 [integration]
 yunohost = ">= 11.2"
@@ -38,9 +39,9 @@ ram.runtime = "50M"
     type = "string"
     example = "xxxx"
 
-    [install.gitea_url]
-    ask.en = "Please enter Gitea URL"
-    ask.fr = "Veuillez entrer l'URL de Gitea"
+    [install.forgejo_url]
+    ask.en = "Please enter Forgejo URL"
+    ask.fr = "Veuillez entrer l'URL de Forgejo"
     type = "string"
     example = "https://gitea.com/"
 
@@ -49,15 +50,13 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        amd64.url = "https://gitea.com/gitea/act_runner/releases/download/v0.2.6/act_runner-0.2.6-linux-amd64"
-        amd64.sha256 = "234c2bdb871e7b0bfb84697f353395bfc7819faf9f0c0443845868b64a041057"
-        arm64.url = "https://gitea.com/gitea/act_runner/releases/download/v0.2.6/act_runner-0.2.6-linux-arm64"
-        arm64.sha256 = "f5c477b54d7db5289acee6b59cd96b28de4bdda809f79e830662d4c952b2914d"
-        armhf.url = "https://gitea.com/gitea/act_runner/releases/download/v0.2.6/act_runner-0.2.6-linux-arm-7"
-        armhf.sha256 = "b9e7d4058e335513be0a76180e11f4f3971486ad7d64358f7ecde734b8ca19fa"
+        amd64.url = "https://code.forgejo.org/forgejo/runner/releases/download/v3.0.3/forgejo-runner-3.0.3-linux-amd64"
+        amd64.sha256 = "f95fd971e1429b1e1eb24c5364e24ee695db0298d13ef5f7ee40c810ecac4797"
+        arm64.url = "https://code.forgejo.org/forgejo/runner/releases/download/v3.0.3/forgejo-runner-3.0.3-linux-arm64"
+        arm64.sha256 = "224e4043f98a1eb05cacf8d6a6c8ee6eff95c955478406634b7109a5a43834a6"
         in_subdir = false
         extract = false
-        rename = "act_runner"
+        rename = "forgejo-runner"
 
     [resources.system_user]
 
