@@ -96,7 +96,7 @@ yunohost service add $app --description="Runner for Forgejo" --log="/var/log/$ap
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
 pushd $install_dir
-	./forgejo-runner register --no-interactive --token $token --name runner #--instance $forgejo_url
+	./forgejo-runner register --no-interactive --token $token --name runner --instance $forgejo_url
 popd
 
 #=================================================
