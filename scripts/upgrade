@@ -33,7 +33,7 @@ then
 fi
 
 chown -R $app:www-data "$install_dir"
-chmod +x "$install_dir/act_runner"
+chmod +x "$install_dir/forgejo-runner"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
