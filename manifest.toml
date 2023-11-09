@@ -45,13 +45,6 @@ ram.runtime = "50M"
     type = "string"
     example = "https://domain.tld/forgejo"
 
-    [install.docker_image]
-    ask.en = "Please enter the Docker image"
-    ask.fr = "Veuillez entrer l'image du Docker"
-    type = "string"
-    example = "alpine:latest"
-    default = "alpine:latest"
-
 [resources]
 
     [resources.sources]
@@ -73,4 +66,8 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "ca-certificates, git, curl, tar, docker-ce, docker-ce-cli, containerd.io"
+    packages = "ca-certificates, git, curl, tar"
+
+    extras.docker.repo = "https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+    extras.docker.key = "https://download.docker.com/linux/debian/gpg"
+    extras.docker.packages = "docker-ce, docker-ce-cli, containerd.io"

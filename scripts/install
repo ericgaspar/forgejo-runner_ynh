@@ -11,7 +11,7 @@ source /usr/share/yunohost/helpers
 
 forgejo_url=$YNH_APP_ARG_FORGEJO_URL
 token=$YNH_APP_ARG_TOKEN
-docker_image=$YNH_APP_ARG_DOCKER_IMAGE
+docker_image="alpine:latest"
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
