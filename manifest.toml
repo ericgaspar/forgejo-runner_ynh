@@ -4,8 +4,8 @@ packaging_format = 2
 
 id = "forgejo-runner"
 name = "Forgejo Runner"
-description.en = "Runner for Forgejo based on act"
-description.fr = "Runner pour Forgejo basé sur act"
+description.en = "Runner for Forgejo based"
+description.fr = "Runner pour Forgejo basé"
 
 version = "3.0.3~ynh1"
 
@@ -19,7 +19,7 @@ code = "https://code.forgejo.org/forgejo/runner"
 [integration]
 yunohost = ">= 11.2"
 architectures = "all"
-multi_instance = true
+multi_instance = false
 
 ldap = false
 
@@ -34,8 +34,8 @@ ram.runtime = "50M"
     type = "domain"
 
     [install.token]
-    ask.en = "This token can be retrieved at this location: http://192.168.8.8:3000/admin/actions/runners"
-    ask.fr = "Ce token peut être récupéré à cet emplacement : http://192.168.8.8:3000/admin/actions/runners"
+    ask.en = "This token can be retrieved at this location: domain.tld/admin/actions/runners"
+    ask.fr = "Ce token peut être récupéré à cet emplacement : domain.tld/admin/actions/runners"
     type = "string"
     example = "xxxx"
 
@@ -43,7 +43,14 @@ ram.runtime = "50M"
     ask.en = "Please enter Forgejo URL"
     ask.fr = "Veuillez entrer l'URL de Forgejo"
     type = "string"
-    example = "https://gitea.com/"
+    example = "https://domain.tld/forgejo"
+
+    [install.docker_image]
+    ask.en = "Please enter the Docker image"
+    ask.fr = "Veuillez entrer l'image du Docker"
+    type = "string"
+    example = "alpine:latest"
+    default = "alpine:latest"
 
 [resources]
 
@@ -64,3 +71,6 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
+
+    [resources.apt]
+    packages = "ca-certificates, git, curl, tar, docker-ce, docker-ce-cli, containerd.io"
