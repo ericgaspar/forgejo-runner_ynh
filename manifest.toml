@@ -68,6 +68,6 @@ ram.runtime = "50M"
     [resources.apt]
     packages = "ca-certificates, git, curl, tar"
 
-    extras.docker.repo = "https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+    extras.docker.repo = "https://download.docker.com/linux/debian bullseye stable"
     extras.docker.key = "https://download.docker.com/linux/debian/gpg"
     extras.docker.packages = "docker-ce, docker-ce-cli, containerd.io"
